@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
@@ -19,13 +19,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-      font-size: 1.8em;
-      color: #ffffff;
-      letter-spacing: 2px;
+      color: white;
     }
 
     nav ul {
@@ -38,56 +35,53 @@
 
     nav ul li a {
       text-decoration: none;
-      color: #ffffff;
-      font-weight: 500;
-      transition: color 0.3s ease, border-bottom 0.3s;
-      padding-bottom: 2px;
+      color: white;
+      font-weight: bold;
     }
 
     nav ul li a:hover {
       color: #c62828;
-      border-bottom: 2px solid #c62828;
     }
 
-    main.projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 40px;
+    main {
       padding: 40px;
     }
 
-    .project-card {
-      background: #fff;
+    .projects-grid,
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card,
+    .video-card {
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      transition: transform 0.3s;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card img {
+    .project-card img,
+    .video-card video {
       width: 100%;
-      height: auto;
-      max-height: 500px;
-      object-fit: cover;
       display: block;
     }
 
-    .project-card h2 {
-      font-size: 1.4em;
-      padding: 15px;
-      text-align: center;
-      color: #fff;
-      background-color: #c62828;
+    .project-card h2,
+    .video-card h2 {
       margin: 0;
+      padding: 10px;
+      background-color: #c62828;
+      color: white;
+      text-align: center;
     }
 
-    .project-card a {
-      text-decoration: none;
-      color: inherit;
+    .page {
+      display: none;
+    }
+
+    .active {
       display: block;
     }
 
@@ -96,18 +90,6 @@
       color: white;
       text-align: center;
       padding: 20px;
-      font-size: 0.95em;
-    }
-
-    @media (max-width: 600px) {
-      .project-card img {
-        max-height: 300px;
-      }
-
-      main.projects {
-        padding: 20px;
-        gap: 20px;
-      }
     }
   </style>
 </head>
@@ -117,67 +99,131 @@
     <h1>AR.SUNEELKUMAR KODURU</h1>
     <nav>
       <ul>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="walkthroughs.html">Walkthroughs</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#" onclick="showPage('home')">Portfolio</a></li>
+        <li><a href="#" onclick="showPage('walkthroughs')">Walkthroughs</a></li>
+        <li><a href="#" onclick="showPage('about')">About</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="projects">
-    <section class="project-card">
-      <a href="Avekshahospital.html">
-        <img src="AVEKSHA HOSPITAL ELEVATION_page-0004.jpg" alt="Hospital Project" />
-        <h2>Aveksha Hospital</h2>
-      </a>
-    </section>
+  <main>
+    <div id="home" class="page active">
+      <div class="projects-grid">
+        <div class="project-card">
+          <a href="aveksha.html" style="text-decoration: none;">
+          <img src="AVEKSHA HOSPITAL ELEVATION_page-0004.jpg" alt="Aveksha Hospital">
+          <h2>Aveksha Hospital</h2>
+          </a>  
+        </div>
+        <div class="project-card">
+          <a href="Gadwalrailwaystation.html" style="text-decoration: none;">
+          <img src="IMAGE-8.jpg" alt="Railway Station">
+          <h2>Gadwal Railway Station</h2>
+            </a>
+        </div>
+        <div class="project-card">
+          <a href="Harekrishnatemple.html" style="text-decoration: none;">
+          <img src="1_16 - Photo.jpg" alt="Harekrishna Temple">
+          <h2>Harekrishna Temple</h2>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="Narsipatnamlayout.html" style="text-decoration: none;">
+          <img src="IMAGE-8.jpg" alt="Narsipatnam layout">
+          <h2>Narsipatnam Layout</h2>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="Lacantina.html" style="text-decoration: none;">
+          <img src="LA CANTINA VIEWS._page-0009.jpg" alt="La Cantina Project">
+          <h2>La Cantina</h2>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="apartment.html" style="text-decoration: none;">
+          <img src="images/apartment-thumb.jpg" alt="Apartment Project">
+          <h2>apartment</h2>
+          </a>
+        </div>
 
-    <section class="project-card">
-      <a href="railway.html">
-        <img src="IMAGE-8.jpg" alt="Railway Station Project" />
-        <h2>Gadwal Railway Station</h2>
-      </a>
-    </section>
+      </div>
+    </div>
 
-    <section class="project-card">
-      <a href="Harekrishnatemple.html">
-        <img src="1_16 - Photo.jpg" alt="Harekrishna Temple Project" />
-        <h2>Harekrishna Temple</h2>
-      </a>
-    </section>
+    <div id="walkthroughs" class="page">
+      <div class="videos-grid">
+        <div class="video-card">
+          <video src="walk1.mp4" controls onclick="this.requestFullscreen()"></video>
+          <h2>Walkthrough 1</h2>
+        </div>
+        <div class="video-card">
+          <video src="walk2.mp4" controls onclick="this.requestFullscreen()"></video>
+          <h2>Walkthrough 2</h2>
+        </div>
+        <!-- Add more videos here -->
+      </div>
+    </div>
 
-    <section class="project-card">
-      <a href="Narsipatnamlayout.html">
-        <img src="01_13 - Photo.png" alt="Narsipatnam Layout Project" />
-        <h2>Narsipatnam Layout</h2>
-      </a>
-    </section>
+    <div id="about" class="page">
+      <h2>About</h2>
+      <p>This website showcases the architectural projects and walkthroughs of AR. Suneel Kumar Koduru.</p>
+    </div>
 
-    <section class="project-card">
-      <a href="Lacantina.html">
-        <img src="LA CANTINA VIEWS._page-0009.jpg" alt="La Cantina Project" />
-        <h2>La Cantina</h2>
-      </a>
-    </section>
-
-    <section class="project-card">
-      <a href="apartment.html">
-        <img src="images/apartment-thumb.jpg" alt="Apartment Project" />
-        <h2>Apartment Complex</h2>
-      </a>
-    </section>
-
-    <section class="project-card">
-      <a href="villa.html">
-        <img src="images/villa-thumb.jpg" alt="Villa Project" />
-        <h2>Luxury Villas</h2>
-      </a>
-    </section>
+    <div id="contact" class="page">
+      <h2>Contact</h2>
+      <p>Email: example@example.com</p>
+      <p>Phone: +91-9876543210</p>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Suneel Kumar Designs. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
