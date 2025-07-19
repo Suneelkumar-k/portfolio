@@ -1,78 +1,149 @@
-<!-- hospital.html -->
+<!-- Avekshahospital.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aveksha Hospital Project</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aveksha Hospital</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      background-color: #fffaf5;
+      color: #333;
     }
 
-    header, footer {
-      background: #222;
-      color: #fff;
+    /* Top header */
+    .top-header {
+      background: #fff;
+      padding: 24px 40px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 2.2em; /* Matching index.html size */
+      color: #000;
+      text-shadow: 1px 1px 1px #002060;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #8b0000;
+    }
+
+    /* Project Title */
+    .project-title {
       text-align: center;
-      padding: 20px 0;
+      font-size: 2em;
+      font-weight: bold;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      color: #222;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    h1 {
-      margin: 20px;
-      color: #0a0a23;
-    }
-
+    /* Gallery layout */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 40px;
     }
 
     .gallery img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .walkthrough-btn {
-      display: block;
-      margin: 30px auto;
+    .back-button {
+      display: inline-block;
+      margin: 0 auto 40px;
       padding: 12px 24px;
-      background-color: #0077cc;
+      background-color: #8b0000;
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
+      transition: background 0.3s;
       text-align: center;
-      max-width: 200px;
     }
 
-    .back-btn {
-      display: block;
-      margin: 20px auto 40px;
-      padding: 10px 20px;
-      background-color: #444;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
+    .back-container {
       text-align: center;
-      max-width: 180px;
+    }
+
+    .back-button:hover {
+      background-color: #a30000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h2>Aveksha Hospital Project</h2>
-  </header>
 
-  <h1>Project Gallery</h1>
+  <!-- Top Header -->
+  <div class="top-header">
+    <div class="logo">SUNEEL KUMAR KODURU DESIGNS</div>
+    <nav class="nav-links">
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="walkthroughs.html">Walkthroughs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Project Title Header -->
+  <div class="project-title">Aveksha Hospital Project</div>
+
+  <!-- Image Gallery -->
   <section class="gallery">
     <img src="AVEKSHA HOSPITAL ELEVATION_page-0002.jpg" alt="Hospital View 16">
     <img src="AVEKSHA HOSPITAL ELEVATION_page-0003.jpg" alt="Hospital View 17">
@@ -99,16 +170,21 @@
     <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0023.jpg" alt="Hospital View 13">
     <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0024.jpg" alt="Hospital View 14">
     <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0028.jpg" alt="Hospital View 15">
-    
   </section>
 
-  <a class="walkthrough-btn" href="https://example.com/hospital-walkthrough" target="_blank">Watch Walkthrough</a>
+  <!-- Back to Home Button (at Bottom) -->
+  <div class="back-container">
+    <a class="back-button" href="index.html">&larr; Back to Home</a>
+  </div>
 
-  <a class="back-btn" href="index.html">&#8592; Back to Home</a>
-
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Suneel Kumar Designs</p>
+    <p>&copy; 2025 Suneel Kumar Designs. All rights reserved.</p>
   </footer>
+
+</body>
+
+</html>
 </body>
 
 </html>
