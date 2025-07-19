@@ -17,7 +17,7 @@
     /* Top header */
     .top-header {
       background: #fff;
-      padding: 20px 40px;
+      padding: 24px 40px;
       border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
@@ -26,7 +26,7 @@
 
     .logo {
       font-weight: bold;
-      font-size: 1.5em;
+      font-size: 2.2em; /* Matching index.html size */
       color: #000;
       text-shadow: 1px 1px 1px #002060;
     }
@@ -51,23 +51,24 @@
       text-align: center;
       font-size: 2em;
       font-weight: bold;
-      margin-top: 20px;
-      margin-bottom: 10px;
+      margin-top: 30px;
+      margin-bottom: 20px;
       color: #222;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
+    /* Gallery layout */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
       padding: 40px;
     }
 
     .gallery img {
       width: 100%;
-      height: 200px;
+      height: auto;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -98,6 +99,28 @@
       padding: 20px;
       background: #222;
       color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
