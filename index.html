@@ -51,8 +51,8 @@
 
     main.projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
       padding: 40px;
     }
 
@@ -69,26 +69,24 @@
     }
 
     .project-card img {
-    width: 350%;
-    height: 350px;
-    object-fit: cover;
-    display: block;
-    }
-
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
     }
 
     .project-card h2 {
-      font-size: 1.2em;
+      font-size: 1.4em;
       padding: 15px;
       text-align: center;
       color: #222;
       margin: 0;
     }
 
-    /* ✅ Remove underline and inherit color */
     .project-card a {
       text-decoration: none;
       color: inherit;
+      display: block;
     }
 
     footer {
@@ -96,6 +94,17 @@
       padding: 20px;
       background: #222;
       color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .project-card img {
+        height: 250px;
+      }
+
+      main.projects {
+        padding: 20px;
+        gap: 20px;
+      }
     }
   </style>
 </head>
