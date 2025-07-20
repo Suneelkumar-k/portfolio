@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gadwal Railway Station</title>
+  <title>Aveksha Hospital</title>
 
-  <!-- Updated Font Awesome CDN -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-pbG7bEdRfHE1X4soiJ+9I0RG2qR9HnbZ52iN55kI2JSLZ0r8kzACmGbQK9bGLTST5LJMKQ39QGbAh7GyXPM5Vw=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
-  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
     body {
@@ -28,11 +19,10 @@
     header {
       background-color: #60485a;
       color: white;
-      padding: 20px 20px;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
       position: relative;
     }
 
@@ -46,7 +36,6 @@
       font-size: 28px;
       cursor: pointer;
       color: white;
-      z-index: 2000;
     }
 
     nav {
@@ -67,40 +56,41 @@
       font-weight: bold;
       display: flex;
       align-items: center;
-      gap: 6px;
+    }
+
+    nav ul li a i {
+      margin-right: 8px;
     }
 
     nav ul li a:hover {
-      color: #ffcccb;
+      color: #c62828;
     }
 
     @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #402c3d;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-radius: 10px;
+        padding: 10px;
+        z-index: 1000;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
       .menu-icon {
         display: block;
       }
 
       nav {
         position: absolute;
-        right: 20px;
-        top: 70px;
-        width: 100%;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #402c3d;
-        border-radius: 10px;
-        padding: 10px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 220px;
-        z-index: 1000;
-      }
-
-      nav ul.show {
-        display: flex;
+        right: 40px;
       }
     }
 
@@ -136,6 +126,7 @@
     }
 
     .back-button {
+      display: inline-block;
       padding: 12px 24px;
       background-color: #c62828;
       color: #fff;
@@ -155,19 +146,13 @@
       padding: 20px;
     }
 
-    @media (max-width: 1000px) {
-      .gallery {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       .gallery {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       .gallery {
         grid-template-columns: 1fr;
       }
@@ -177,13 +162,13 @@
 
 <body>
 
-  <!-- Header -->
+  <!-- Header with Menu Icon -->
   <header>
     <h1>Ar. SUNEELKUMAR KODURU</h1>
-    <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <nav>
       <ul id="menu">
-        <li><a href="index.html"><i class="fas fa-th"></i> Portfolio</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> Portfolio</a></li>
         <li><a href="walkthroughs.html"><i class="fas fa-video"></i> Walkthroughs</a></li>
         <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
         <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
@@ -192,23 +177,35 @@
   </header>
 
   <!-- Project Title -->
-  <div class="project-title">Gadwal Railway Station Project</div>
+  <div class="project-title">Aveksha Hospital Project</div>
 
-  <!-- Gallery -->
+  <!-- Image Gallery -->
   <section class="gallery">
-    <img src="IMAGE-2.jpg" alt="Railway Image 1">
-    <img src="IMAGE-3.jpg" alt="Railway Image 2">
-    <img src="IMAGE-4.jpg" alt="Railway Image 3">
-    <img src="IMAGE-22.jpg" alt="Railway Image 4">
-    <img src="IMAGE-7.jpg" alt="Railway Image 5">
-    <img src="IMAGE-8.jpg" alt="Railway Image 6">
-    <img src="IMAGE-9.jpg" alt="Railway Image 7">
-    <img src="IMAGE-11.jpg" alt="Railway Image 8">
-    <img src="IMAGE-13.jpg" alt="Railway Image 9">
-    <img src="IMAGE-14.jpg" alt="Railway Image 10">
-    <img src="IMAGE-20.jpg" alt="Railway Image 11">
-    <img src="IMAGE-21.jpg" alt="Railway Image 12">
-    <img src="IMAGE-6.jpg" alt="Railway Image 13">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0002.jpg" alt="Hospital View 16">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0003.jpg" alt="Hospital View 17">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0004.jpg" alt="Hospital View 18">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0005.jpg" alt="Hospital View 19">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0006.jpg" alt="Hospital View 20">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0007.jpg" alt="Hospital View 21">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0009.jpg" alt="Hospital View 22">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0010.jpg" alt="Hospital View 23">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0011.jpg" alt="Hospital View 24">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0012.jpg" alt="Hospital View 25">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0002.jpg" alt="Hospital View 1">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0003.jpg" alt="Hospital View 2">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0005.jpg" alt="Hospital View 3">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0006.jpg" alt="Hospital View 4">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0007.jpg" alt="Hospital View 5">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0010.jpg" alt="Hospital View 6">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0011.jpg" alt="Hospital View 7">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0013.jpg" alt="Hospital View 8">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0015.jpg" alt="Hospital View 9">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0017.jpg" alt="Hospital View 10">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0018.jpg" alt="Hospital View 11">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0021.jpg" alt="Hospital View 12">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0023.jpg" alt="Hospital View 13">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0024.jpg" alt="Hospital View 14">
+    <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0028.jpg" alt="Hospital View 15">
   </section>
 
   <!-- Back Button -->
@@ -221,7 +218,7 @@
     <p>&copy; 2025 Ar. Suneelkumar Koduru. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
 
-  <!-- Toggle Menu Script -->
+  <!-- Menu Script -->
   <script>
     function toggleMenu() {
       document.getElementById('menu').classList.toggle('show');
