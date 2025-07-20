@@ -5,8 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gadwal Railway Station</title>
+
+  <!-- Updated Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-pbG7bEdRfHE1X4soiJ+9I0RG2qR9HnbZ52iN55kI2JSLZ0r8kzACmGbQK9bGLTST5LJMKQ39QGbAh7GyXPM5Vw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -18,10 +28,11 @@
     header {
       background-color: #60485a;
       color: white;
-      padding: 20px 40px;
+      padding: 20px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       position: relative;
     }
 
@@ -35,6 +46,7 @@
       font-size: 28px;
       cursor: pointer;
       color: white;
+      z-index: 2000;
     }
 
     nav {
@@ -63,30 +75,32 @@
     }
 
     @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #402c3d;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 220px;
-        border-radius: 10px;
-        padding: 10px;
-        z-index: 1000;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
       .menu-icon {
         display: block;
       }
 
       nav {
         position: absolute;
-        right: 40px;
+        right: 20px;
+        top: 70px;
+        width: 100%;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #402c3d;
+        border-radius: 10px;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 220px;
+        z-index: 1000;
+      }
+
+      nav ul.show {
+        display: flex;
       }
     }
 
@@ -163,7 +177,7 @@
 
 <body>
 
-  <!-- Header with working menu icon -->
+  <!-- Header -->
   <header>
     <h1>Ar. SUNEELKUMAR KODURU</h1>
     <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
@@ -207,12 +221,12 @@
     <p>&copy; 2025 Ar. Suneelkumar Koduru. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
 
-  <!-- Script for mobile menu -->
+  <!-- Toggle Menu Script -->
   <script>
     function toggleMenu() {
       document.getElementById('menu').classList.toggle('show');
     }
   </script>
-</body>
 
+</body>
 </html>
