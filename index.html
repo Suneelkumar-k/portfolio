@@ -19,14 +19,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
       flex-wrap: wrap;
-    }
-
-    header .left-section {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      position: relative;
     }
 
     header h1 {
@@ -38,10 +32,7 @@
       display: none;
       font-size: 28px;
       cursor: pointer;
-      padding: 6px 12px;
-      background-color: #ffccbc; /* Different from header */
-      border-radius: 6px;
-      color: #333;
+      color: white;
     }
 
     nav ul {
@@ -66,7 +57,7 @@
       nav ul {
         display: none;
         flex-direction: column;
-        background-color: #60485a;
+        background-color: #402c3d; /* Background for menu items */
         position: absolute;
         top: 70px;
         right: 40px;
@@ -142,10 +133,8 @@
 <body>
 
   <header>
-    <div class="left-section">
-      <h1>Ar. SUNEELKUMAR KODURU</h1>
-      <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-    </div>
+    <h1>Ar. SUNEELKUMAR KODURU</h1>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <nav>
       <ul id="menu">
         <li><a href="index.html">Portfolio</a></li>
