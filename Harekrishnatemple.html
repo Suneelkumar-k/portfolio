@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hare Krishna Temple</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -17,10 +18,11 @@
     /* Top header */
     .top-header {
       background: #60485a;
-      padding: 24px 40px;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -33,6 +35,7 @@
     .nav-links {
       display: flex;
       gap: 25px;
+      align-items: center;
     }
 
     .nav-links a {
@@ -40,10 +43,20 @@
       color: white;
       font-weight: 500;
       transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .nav-links a:hover {
       color: #c62828;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
     }
 
     /* Project Title */
@@ -107,19 +120,26 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #60485a;
+        width: 100%;
+        padding: 20px 0;
+        margin-top: 10px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
       .gallery {
         grid-template-columns: 1fr;
-      }
-
-      .top-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
       }
     }
   </style>
@@ -130,11 +150,14 @@
   <!-- Top Header -->
   <div class="top-header">
     <div class="logo">Ar. SUNEELKUMAR KODURU</div>
-    <nav class="nav-links">
-      <a href="index.html">Portfolio</a>
-      <a href="walkthroughs.html">Walkthroughs</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav class="nav-links" id="navMenu">
+      <a href="index.html"><i class="fas fa-home"></i> Portfolio</a>
+      <a href="walkthroughs.html"><i class="fas fa-video"></i> Walkthroughs</a>
+      <a href="about.html"><i class="fas fa-user"></i> About</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
   </div>
 
@@ -167,6 +190,14 @@
   <footer>
     <p>&copy; 2025 Ar. Suneelkumar Koduru. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
+
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navMenu");
+      nav.classList.toggle("show");
+    }
+  </script>
 
 </body>
 
