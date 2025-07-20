@@ -20,6 +20,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      position: relative;
     }
 
     header h1 {
@@ -43,6 +44,35 @@
 
     nav ul li a:hover {
       color: #c62828;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Hide nav and show icon on small screens */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #60485a;
+        position: absolute;
+        top: 70px;
+        right: 40px;
+        width: 200px;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
     }
 
     .projects-grid {
@@ -100,10 +130,12 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>Ar. SUNEELKUMAR KODURU</h1>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <nav>
-      <ul>
+      <ul id="menu">
         <li><a href="index.html">Portfolio</a></li>
         <li><a href="walkthroughs.html">Walkthroughs</a></li>
         <li><a href="about.html">About</a></li>
@@ -114,6 +146,8 @@
 
   <main>
     <div class="projects-grid">
+      <!-- All project cards as given previously -->
+      <!-- ... same content ... -->
       <div class="project-card">
         <a href="Avekshahospital.html" style="text-decoration: none;">
           <img src="final image-3.png" alt="Aveksha Hospital" />
@@ -158,30 +192,36 @@
 
       <div class="project-card">
         <a href="Houseelevations.html" style="text-decoration: none;">
-          <img src="elevation1.jpeg" alt="Project 5" />
+          <img src="elevation1.jpeg" alt="House Elevations" />
           <h2>House Elevations</h2>
         </a>
       </div>
 
       <div class="project-card">
-        <a href="#" style="text-decoration: none;">
-          <img src="project6.jpg" alt="Project 6" />
+        <a href="#">
+          <img src="project6.jpg" alt="Residential Apartment" />
           <h2>Residential Apartment</h2>
         </a>
       </div>
 
       <div class="project-card">
         <a href="Houseinteriors.html" style="text-decoration: none;">
-          <img src="07.jpeg" alt="Project 5" />
+          <img src="07.jpeg" alt="House Interiorss" />
           <h2>House Interiorss</h2>
         </a>
       </div>
-      
     </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Ar. SuneelKumar Koduru. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('show');
+    }
+  </script>
+
 </body>
 </html>
