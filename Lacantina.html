@@ -21,12 +21,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 24px;
     }
 
     .logo {
@@ -50,49 +44,6 @@
 
     .nav-links a:hover {
       color: #c62828;
-    }
-
-    /* Hamburger icon */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-
-    /* Mobile menu */
-    .mobile-menu {
-      display: none;
-      flex-direction: column;
-      background-color: #60485a;
-      width: 100%;
-      text-align: left;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 1000;
-    }
-
-    .mobile-menu a {
-      padding: 15px 40px;
-      color: white;
-      text-decoration: none;
-      border-top: 1px solid #7e6374;
-    }
-
-    .mobile-menu a:hover {
-      background-color: #503947;
-    }
-
-    .mobile-menu.show {
-      display: flex;
     }
 
     /* Project Title */
@@ -156,17 +107,19 @@
       }
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
+    @media (max-width: 600px) {
       .gallery {
         grid-template-columns: 1fr;
+      }
+
+      .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
       }
     }
   </style>
@@ -177,23 +130,12 @@
   <!-- Top Header -->
   <div class="top-header">
     <div class="logo">Ar. SUNEELKUMAR KODURU</div>
-    <div class="nav-links">
+    <nav class="nav-links">
       <a href="index.html">Portfolio</a>
       <a href="walkthroughs.html">Walkthroughs</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div id="mobileMenu" class="mobile-menu">
-      <a href="index.html">Portfolio</a>
-      <a href="walkthroughs.html">Walkthroughs</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
+    </nav>
   </div>
 
   <!-- Project Title Header -->
@@ -201,24 +143,24 @@
 
   <!-- Image Gallery -->
   <section class="gallery">
-    <img src="LA CANTINA VIEWS._page-0002.jpg" alt="Image 1" />
-    <img src="LA CANTINA VIEWS._page-0003.jpg" alt="Image 2" />
-    <img src="LA CANTINA VIEWS._page-0004.jpg" alt="Image 3" />
-    <img src="LA CANTINA VIEWS._page-0005.jpg" alt="Image 4" />
-    <img src="LA CANTINA VIEWS._page-0006.jpg" alt="Image 5" />
-    <img src="LA CANTINA VIEWS._page-0007.jpg" alt="Image 6" />
-    <img src="LA CANTINA VIEWS._page-0008.jpg" alt="Image 7" />
-    <img src="LA CANTINA VIEWS._page-0009.jpg" alt="Image 8" />
-    <img src="LA CANTINA VIEWS._page-0010.jpg" alt="Image 9" />
-    <img src="LA CANTINA VIEWS._page-0011.jpg" alt="Image 10" />
-    <img src="LA CANTINA VIEWS._page-0012.jpg" alt="Image 11" />
-    <img src="LA CANTINA VIEWS._page-0013.jpg" alt="Image 12" />
-    <img src="LA CANTINA VIEWS._page-0014.jpg" alt="Image 13" />
-    <img src="LA CANTINA VIEWS._page-0015.jpg" alt="Image 14" />
-    <img src="LA CANTINA VIEWS._page-0016.jpg" alt="Image 15" />
-    <img src="LA CANTINA VIEWS._page-0017.jpg" alt="Image 16" />
-    <img src="LA CANTINA VIEWS._page-0018.jpg" alt="Image 17" />
-    <img src="LA CANTINA VIEWS._page-0019.jpg" alt="Image 18" />
+<img src="LA CANTINA VIEWS._page-0002.jpg" alt="Temple Image 1" />
+<img src="LA CANTINA VIEWS._page-0003.jpg" alt="Image 5235" />
+<img src="LA CANTINA VIEWS._page-0004.jpg" alt="Image 5235" />
+    <img src="LA CANTINA VIEWS._page-0005.jpg" alt="Image 5235" />
+<img src="LA CANTINA VIEWS._page-0006.jpg" alt="Image 5235" />
+    <img src="LA CANTINA VIEWS._page-0007.jpg" alt="Image 5235" />
+<img src="LA CANTINA VIEWS._page-0008.jpg" alt="Image 5235" />
+    <img src="LA CANTINA VIEWS._page-0009.jpg" alt="Image 5235" />
+<img src="LA CANTINA VIEWS._page-0010.jpg" alt="Image 5235" />
+    <img src="LA CANTINA VIEWS._page-0011.jpg" alt="Image 5235" />
+<img src="LA CANTINA VIEWS._page-0012.jpg" alt="Image 5235" />
+    <img src="LA CANTINA VIEWS._page-0013.jpg" alt="Image 5235" />
+<img src="LA CANTINA VIEWS._page-0014.jpg" alt="Image 5235" />
+    <img src="LA CANTINA VIEWS._page-0015.jpg" alt="Image 5235" />
+<img src="LA CANTINA VIEWS._page-0016.jpg" alt="Image 5235" />
+    <img src="LA CANTINA VIEWS._page-0017.jpg" alt="Image 5235" />
+    <img src="LA CANTINA VIEWS._page-0018.jpg" alt="Image 5235" />
+    <img src="LA CANTINA VIEWS._page-0019.jpg" alt="Image 5235" />
   </section>
 
   <!-- Back to Home Button -->
@@ -230,13 +172,6 @@
   <footer>
     <p>&copy; 2025 Ar. Suneelkumar Koduru. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('show');
-    }
-  </script>
 
 </body>
 
