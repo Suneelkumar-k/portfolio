@@ -14,13 +14,13 @@
       color: #333;
     }
 
-    /* Top header */
     .top-header {
       background: #60485a;
       padding: 24px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -46,7 +46,42 @@
       color: #c62828;
     }
 
-    /* Project Title */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #60485a;
+        padding: 10px 0;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
     .project-title {
       text-align: center;
       font-size: 2em;
@@ -58,7 +93,6 @@
       letter-spacing: 1px;
     }
 
-    /* Gallery layout */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -111,16 +145,6 @@
       .gallery {
         grid-template-columns: 1fr;
       }
-
-      .top-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-      }
     }
   </style>
 </head>
@@ -130,7 +154,14 @@
   <!-- Top Header -->
   <div class="top-header">
     <div class="logo">Ar. SUNEELKUMAR KODURU</div>
-    <nav class="nav-links">
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Portfolio</a>
       <a href="walkthroughs.html">Walkthroughs</a>
       <a href="about.html">About</a>
@@ -138,47 +169,44 @@
     </nav>
   </div>
 
-  <!-- Project Title Header -->
+  <!-- Project Title -->
   <div class="project-title">Victoria Residential Project</div>
 
   <!-- Image Gallery -->
   <section class="gallery">
-    
-    <img src="95d41346-ada6-40a2-bf32-1fac2bc5e8cb.jpeg" alt="Temple Image 13" />
-    <img src="vr.jpg" alt="Temple Image 13" />
-    <img src="FINAL IMAGE 2.png" alt="Temple Image 13" />
-    <img src="0c417d46-358e-4528-a47e-fe65e35a567c.jpeg" alt="Temple Image 13" />
-    <img src="ff565cc2-db4d-4feb-bb58-4f4b75973a22.jpeg" alt="Temple Image 13" />
-    <img src="KITCHEN INTERIORS_page-0001.jpg" alt="Temple Image 13" />
-    <img src="KITCHEN INTERIORS_page-0002.jpg" alt="Temple Image 13" />
-    <img src="KITCHEN INTERIORS_page-0003.jpg" alt="Temple Image 13" />
-    <img src="KITCHEN INTERIORS_page-0004.jpg" alt="Temple Image 13" />
-    <img src="KITCHEN INTERIORS_page-0005.jpg" alt="Temple Image 13" />
-    <img src="KITCHEN INTERIORS_page-0006.jpg" alt="Temple Image 13" />
-    <img src="KITCHEN INTERIORS_page-0007.jpg" alt="Temple Image 13" />
-    <img src="KITCHEN INTERIORS_page-0008.jpg" alt="Temple Image 13" />
-    <img src="KITCHEN INTERIORS_page-0009.jpg" alt="Temple Image 13" />
-    <img src="Drawing room and Hall Interiors_page-0001.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0002.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0003.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0004.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0005.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0006.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0007.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0008.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0009.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0010.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0011.jpg" alt="Temple Image 1" />
-    <img src="Drawing room and Hall Interiors_page-0012.jpg" alt="Temple Image 1" />
-    <img src="FIRST FLOOR LOBBY INTERIORS_page-0006.jpg" alt="Temple Image 1" />
-    <img src="FIRST FLOOR LOBBY INTERIORS_page-0005.jpg" alt="Temple Image 1" />
-    <img src="FIRST FLOOR LOBBY INTERIORS_page-0004.jpg" alt="Temple Image 1" />
-    <img src="FIRST FLOOR LOBBY INTERIORS_page-0003.jpg" alt="Temple Image 1" />
-    <img src="FIRST FLOOR LOBBY INTERIORS_page-0002.jpg" alt="Temple Image 1" />
-    <img src="FIRST FLOOR LOBBY INTERIORS_page-0001.jpg" alt="Temple Image 1" />
-    
-    
-    
+    <!-- Your existing image list remains unchanged -->
+    <img src="95d41346-ada6-40a2-bf32-1fac2bc5e8cb.jpeg" alt="Temple Image" />
+    <img src="vr.jpg" alt="Temple Image" />
+    <img src="FINAL IMAGE 2.png" alt="Temple Image" />
+    <img src="0c417d46-358e-4528-a47e-fe65e35a567c.jpeg" alt="Temple Image" />
+    <img src="ff565cc2-db4d-4feb-bb58-4f4b75973a22.jpeg" alt="Temple Image" />
+    <img src="KITCHEN INTERIORS_page-0001.jpg" alt="Kitchen Image" />
+    <img src="KITCHEN INTERIORS_page-0002.jpg" alt="Kitchen Image" />
+    <img src="KITCHEN INTERIORS_page-0003.jpg" alt="Kitchen Image" />
+    <img src="KITCHEN INTERIORS_page-0004.jpg" alt="Kitchen Image" />
+    <img src="KITCHEN INTERIORS_page-0005.jpg" alt="Kitchen Image" />
+    <img src="KITCHEN INTERIORS_page-0006.jpg" alt="Kitchen Image" />
+    <img src="KITCHEN INTERIORS_page-0007.jpg" alt="Kitchen Image" />
+    <img src="KITCHEN INTERIORS_page-0008.jpg" alt="Kitchen Image" />
+    <img src="KITCHEN INTERIORS_page-0009.jpg" alt="Kitchen Image" />
+    <img src="Drawing room and Hall Interiors_page-0001.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0002.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0003.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0004.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0005.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0006.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0007.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0008.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0009.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0010.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0011.jpg" alt="Hall Image" />
+    <img src="Drawing room and Hall Interiors_page-0012.jpg" alt="Hall Image" />
+    <img src="FIRST FLOOR LOBBY INTERIORS_page-0006.jpg" alt="Lobby Image" />
+    <img src="FIRST FLOOR LOBBY INTERIORS_page-0005.jpg" alt="Lobby Image" />
+    <img src="FIRST FLOOR LOBBY INTERIORS_page-0004.jpg" alt="Lobby Image" />
+    <img src="FIRST FLOOR LOBBY INTERIORS_page-0003.jpg" alt="Lobby Image" />
+    <img src="FIRST FLOOR LOBBY INTERIORS_page-0002.jpg" alt="Lobby Image" />
+    <img src="FIRST FLOOR LOBBY INTERIORS_page-0001.jpg" alt="Lobby Image" />
   </section>
 
   <!-- Back to Home Button -->
@@ -190,6 +218,13 @@
   <footer>
     <p>&copy; 2025 Ar.Suneelkumar Koduru. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+  </script>
 
 </body>
 
