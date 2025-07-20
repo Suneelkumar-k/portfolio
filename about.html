@@ -14,7 +14,7 @@
       color: #333;
     }
 
-    header {
+    .top-header {
       background: #60485a;
       padding: 24px 40px;
       display: flex;
@@ -31,53 +31,62 @@
     }
 
     .menu-icon {
-      display: none;
-      font-size: 30px;
+      display: flex;
+      flex-direction: column;
       cursor: pointer;
-      color: white;
+      gap: 5px;
     }
 
-    nav {
-      position: relative;
+    .menu-icon span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      border-radius: 2px;
     }
 
-    nav ul {
+    .nav-links {
       display: flex;
       gap: 25px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
     }
 
-    nav ul li a {
+    .nav-links a {
       text-decoration: none;
       color: white;
       font-weight: 500;
       transition: color 0.3s;
     }
 
-    nav ul li a:hover {
+    .nav-links a:hover {
       color: #c62828;
     }
 
     @media (max-width: 768px) {
       .menu-icon {
-        display: block;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #402c3d;
         position: absolute;
-        top: 65px;
         right: 40px;
-        padding: 15px;
-        border-radius: 10px;
-        z-index: 999;
+        top: 30px;
       }
 
-      nav ul.show {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #ffffff;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        border-bottom-left-radius: 10px;
+        z-index: 10;
+      }
+
+      .nav-links a {
+        color: #60485a;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
         display: flex;
       }
     }
@@ -138,18 +147,20 @@
 </head>
 
 <body>
-  <header>
+  <div class="top-header">
     <div class="logo">Ar. SUNEELKUMAR KODURU</div>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-    <nav>
-      <ul id="menu">
-        <li><a href="index.html">Portfolio</a></li>
-        <li><a href="walkthroughs.html">Walkthroughs</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Portfolio</a>
+      <a href="walkthroughs.html">Walkthroughs</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
-  </header>
+  </div>
 
   <section class="about-section">
     <div class="about-container">
@@ -171,7 +182,7 @@
 
   <script>
     function toggleMenu() {
-      document.getElementById('menu').classList.toggle('show');
+      document.getElementById('navLinks').classList.toggle('show');
     }
   </script>
 </body>
