@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Narsipatnam Layout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
       margin: 0;
@@ -14,9 +14,9 @@
     }
 
     header {
-      background-color: #60485a;
+      background-color: #402c3d;
       color: white;
-      padding: 20px 40px;
+      padding: 16px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -25,12 +25,13 @@
 
     header h1 {
       margin: 0;
-      font-size: 20px;
+      font-size: 22px;
+      font-weight: 500;
     }
 
     .menu-icon {
       display: none;
-      font-size: 28px;
+      font-size: 26px;
       cursor: pointer;
       color: white;
     }
@@ -42,29 +43,30 @@
     nav ul {
       list-style: none;
       display: flex;
+      gap: 24px;
       margin: 0;
       padding: 0;
-      gap: 20px;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 500;
+      font-size: 15px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
     nav ul li a:hover {
-      color: #ffccbc;
-    }
-
-    nav ul li a span.icon {
-      font-size: 18px;
+      color: #fcbf49;
     }
 
     @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
       nav ul {
         display: none;
         flex-direction: column;
@@ -73,22 +75,13 @@
         top: 60px;
         right: 0;
         width: 200px;
+        padding: 12px;
         border-radius: 10px;
-        padding: 10px;
         z-index: 1000;
       }
 
       nav ul.show {
         display: flex;
-      }
-
-      .menu-icon {
-        display: block;
-      }
-
-      nav {
-        position: absolute;
-        right: 40px;
       }
     }
 
@@ -168,13 +161,13 @@
 
   <header>
     <h1>Ar. SUNEELKUMAR KODURU</h1>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     <nav>
       <ul id="menu">
-        <li><a href="index.html"><span class="icon">&#127968;</span> Portfolio</a></li>
-        <li><a href="walkthroughs.html"><span class="icon">&#127909;</span> Walkthroughs</a></li>
-        <li><a href="about.html"><span class="icon">&#128100;</span> About</a></li>
-        <li><a href="contact.html"><span class="icon">&#9993;</span> Contact</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> Portfolio</a></li>
+        <li><a href="walkthroughs.html"><i class="fas fa-video"></i> Walkthroughs</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -182,7 +175,7 @@
   <div class="project-title">Narsipatnam Layout Project</div>
 
   <section class="gallery">
-    <!-- Keep your image list as is -->
+    <!-- Gallery images -->
     <img src="01_13 - Photo.png" alt="Temple Image 1" />
     <img src="5235.jpg" alt="Image 5235" />
     <img src="IMAGE-1.png" alt="Image IMAGE-1" />
@@ -226,6 +219,5 @@
       document.getElementById('menu').classList.toggle('show');
     }
   </script>
-
 </body>
 </html>
