@@ -112,14 +112,12 @@
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .video-title {
-      padding: 10px;
-      background: #c62828;
-      color: white;
-      font-weight: bold;
-      text-align: center;
+    .video-container:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     .iframe-wrapper {
@@ -138,6 +136,19 @@
       height: 100%;
       border: none;
       pointer-events: auto;
+      transition: all 0.3s ease;
+    }
+
+    .video-container:hover iframe {
+      filter: brightness(1.05);
+    }
+
+    .video-title {
+      padding: 10px;
+      background: #c62828;
+      color: white;
+      font-weight: bold;
+      text-align: center;
     }
 
     footer {
@@ -153,9 +164,16 @@
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 18px;
       }
     }
   </style>
@@ -180,14 +198,16 @@
   <div class="project-title">Walkthrough Videos</div>
 
   <section class="gallery">
-    <div class="video-container">
-      <div class="iframe-wrapper">
-        <iframe src="https://drive.google.com/file/d/1_4RjSM2NPedGp0wH5zuMp6Aht2fRvkgA/preview"
-          allow="autoplay; fullscreen"
-          sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
-      </div>
-      <div class="video-title">Gadwal RailwayStation Walkthrough</div>
-    </div>
+    <!--
+<div class="video-container">
+  <div class="iframe-wrapper">
+    <iframe src="https://drive.google.com/file/d/1_4RjSM2NPedGp0wH5zuMp6Aht2fRvkgA/preview"
+      allow="autoplay; fullscreen"
+      sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
+  </div>
+  <div class="video-title">Gadwal RailwayStation Walkthrough</div>
+</div> -->
+
 
     <div class="video-container">
       <div class="iframe-wrapper">
