@@ -57,7 +57,7 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
       padding: 40px;
     }
@@ -103,7 +103,17 @@
       padding: 20px;
     }
 
+    @media (max-width: 1024px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
       .top-header {
         flex-direction: column;
         align-items: flex-start;
@@ -154,7 +164,6 @@
   <div class="project-title">Walkthrough Videos</div>
 
   <section class="gallery">
-
     <div class="video-container">
       <div class="iframe-wrapper">
         <iframe
@@ -209,7 +218,6 @@
       </div>
       <div class="video-title">House Elevation</div>
     </div>
-
   </section>
 
   <footer>
