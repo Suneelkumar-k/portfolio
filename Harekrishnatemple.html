@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hare Krishna Temple</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -15,7 +15,6 @@
       color: #333;
     }
 
-    /* Top header */
     .top-header {
       background: #60485a;
       padding: 20px 40px;
@@ -63,7 +62,6 @@
       cursor: pointer;
     }
 
-    /* Project Title */
     .project-title {
       text-align: center;
       font-size: 2.2em;
@@ -75,7 +73,6 @@
       letter-spacing: 1px;
     }
 
-    /* Gallery layout */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -165,10 +162,10 @@
     </nav>
   </div>
 
-  <!-- Project Title Header -->
+  <!-- Project Title -->
   <div class="project-title">Hare Krishna Temple Project</div>
 
-  <!-- Image Gallery -->
+  <!-- Gallery -->
   <section class="gallery">
     <img src="1_1 - Photo.jpg" alt="Temple Image 1" />
     <img src="1_16 - Photo.jpg" alt="Temple Image 2" />
@@ -185,7 +182,7 @@
     <img src="1_15 - Photo.jpg" alt="Temple Image 13" />
   </section>
 
-  <!-- Back to Home Button -->
+  <!-- Back Button -->
   <div class="back-container">
     <a class="back-button" href="index.html">&larr; Back to Home</a>
   </div>
@@ -195,11 +192,10 @@
     <p>&copy; 2025 Ar. Suneelkumar Koduru. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
 
-  <!-- JavaScript for Menu Toggle -->
+  <!-- Toggle Script -->
   <script>
     function toggleMenu() {
-      const nav = document.getElementById("navMenu");
-      nav.classList.toggle("show");
+      document.getElementById("navMenu").classList.toggle("show");
     }
   </script>
 
