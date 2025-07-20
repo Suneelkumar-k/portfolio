@@ -1,5 +1,3 @@
-<!-- Avekshahospital.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,13 +14,13 @@
       color: #333;
     }
 
-    /* Top header */
     .top-header {
       background: #60485a;
       padding: 24px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -35,6 +33,7 @@
     .nav-links {
       display: flex;
       gap: 25px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -48,7 +47,6 @@
       color: #c62828;
     }
 
-    /* Project Title */
     .project-title {
       text-align: center;
       font-size: 2em;
@@ -60,10 +58,9 @@
       letter-spacing: 1px;
     }
 
-    /* Gallery layout */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
       padding: 40px;
     }
@@ -76,20 +73,19 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
+    .back-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
     .back-button {
       display: inline-block;
-      margin: 0 auto 40px;
       padding: 12px 24px;
       background-color: #c62828;
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
       transition: background 0.3s;
-      text-align: center;
-    }
-
-    .back-container {
-      text-align: center;
     }
 
     .back-button:hover {
@@ -103,7 +99,7 @@
       padding: 20px;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 992px) {
       .gallery {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -117,11 +113,7 @@
       .top-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
+        gap: 12px;
       }
     }
   </style>
@@ -140,7 +132,7 @@
     </nav>
   </div>
 
-  <!-- Project Title Header -->
+  <!-- Project Title -->
   <div class="project-title">Aveksha Hospital Project</div>
 
   <!-- Image Gallery -->
@@ -154,7 +146,7 @@
     <img src="AVEKSHA HOSPITAL ELEVATION_page-0009.jpg" alt="Hospital View 22">
     <img src="AVEKSHA HOSPITAL ELEVATION_page-0010.jpg" alt="Hospital View 23">
     <img src="AVEKSHA HOSPITAL ELEVATION_page-0011.jpg" alt="Hospital View 24">
-    <img src="AVEKSHA HOSPITAL ELEVATION_page-0012.jpg" alt="Hospital View 24">
+    <img src="AVEKSHA HOSPITAL ELEVATION_page-0012.jpg" alt="Hospital View 25">
     <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0002.jpg" alt="Hospital View 1">
     <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0003.jpg" alt="Hospital View 2">
     <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0005.jpg" alt="Hospital View 3">
@@ -172,7 +164,7 @@
     <img src="AVEKSHA HOSPIOTAL INTERIORS_page-0028.jpg" alt="Hospital View 15">
   </section>
 
-  <!-- Back to Home Button -->
+  <!-- Back Button -->
   <div class="back-container">
     <a class="back-button" href="index.html">&larr; Back to Home</a>
   </div>
@@ -185,5 +177,3 @@
 </body>
 
 </html>
-
-    
