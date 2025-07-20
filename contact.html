@@ -58,10 +58,6 @@
       color: #c62828;
     }
 
-    nav ul li a.active {
-      color: #c62828;
-    }
-
     .social-icons {
       display: flex;
       gap: 10px;
@@ -145,14 +141,16 @@
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <nav>
       <ul id="menu">
-        <li><a href="index.html"><i class="fas fa-home"></i> Portfolio</a></li>
-        <li><a href="walkthroughs.html"><i class="fas fa-video"></i> Walkthroughs</a></li>
-        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="walkthroughs.html">Walkthroughs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="social-icons">
-      
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://wa.me/918247312188" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
   </header>
@@ -174,17 +172,6 @@
     function toggleMenu() {
       document.getElementById('menu').classList.toggle('show');
     }
-
-    // Highlight current menu item
-    const links = document.querySelectorAll('nav ul li a');
-    const currentPage = window.location.pathname.split('/').pop();
-
-    links.forEach(link => {
-      const linkPage = link.getAttribute('href');
-      if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-        link.classList.add('active');
-      }
-    });
   </script>
 </body>
 </html>
