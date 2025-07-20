@@ -66,6 +66,10 @@
       color: #c62828;
     }
 
+    nav ul li a.active {
+      color: #c62828;
+    }
+
     @media (max-width: 768px) {
       nav ul {
         display: none;
@@ -231,6 +235,17 @@
     function toggleMenu() {
       document.getElementById('menu').classList.toggle('show');
     }
+
+    // Highlight current menu item
+    const links = document.querySelectorAll('nav ul li a');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+      const linkPage = link.getAttribute('href');
+      if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
   </script>
 
 </body>
