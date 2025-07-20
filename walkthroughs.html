@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Walkthroughs</title>
   <style>
     body {
@@ -12,78 +12,75 @@
       color: #333;
     }
 
-    .top-header {
-      background: #60485a;
-      padding: 24px 40px;
+    header {
+      background-color: #60485a;
+      color: white;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
     }
 
-    .logo {
-      font-weight: bold;
-      font-size: 2.2em;
-      color: white;
-      text-shadow: 1px 1px 1px #222;
+    header h1 {
+      margin: 0;
+      font-size: 24px;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #c62828;
-    }
-
-    /* Menu icon styles */
     .menu-icon {
       display: none;
+      font-size: 28px;
       cursor: pointer;
-      font-size: 26px;
       color: white;
-      position: absolute;
-      right: 20px;
-      top: 28px;
     }
 
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      background-color: #60485a;
-      padding: 10px 20px;
-      border-radius: 10px;
-      z-index: 1000;
+    nav {
+      position: relative;
     }
 
-    .dropdown-menu a {
-      display: block;
-      padding: 8px 0;
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 20px;
+    }
+
+    nav ul li a {
       color: white;
       text-decoration: none;
+      font-weight: bold;
     }
 
-    .dropdown-menu a:hover {
+    nav ul li a:hover {
       color: #c62828;
     }
 
     @media (max-width: 768px) {
-      .nav-links {
+      nav ul {
         display: none;
+        flex-direction: column;
+        background-color: #402c3d;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        border-radius: 10px;
+        padding: 10px;
+        z-index: 1000;
+      }
+
+      nav ul.show {
+        display: flex;
       }
 
       .menu-icon {
         display: block;
+      }
+
+      nav {
+        position: absolute;
+        right: 40px;
       }
     }
 
@@ -158,72 +155,30 @@
       }
     }
   </style>
-
-  <script>
-    // Stop other videos when a new one starts
-    function stopAllOtherVideos(currentIframe) {
-      const iframes = document.querySelectorAll("iframe");
-      iframes.forEach(iframe => {
-        if (iframe !== currentIframe) {
-          const src = iframe.src;
-          iframe.src = '';
-          iframe.src = src; // reload to stop playing
-        }
-      });
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const iframes = document.querySelectorAll("iframe");
-      iframes.forEach(iframe => {
-        iframe.addEventListener("load", () => {
-          iframe.contentWindow.addEventListener("click", () => stopAllOtherVideos(iframe));
-        });
-      });
-
-      const menuIcon = document.getElementById("menu-icon");
-      const dropdown = document.getElementById("dropdown-menu");
-
-      menuIcon.addEventListener("click", () => {
-        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-      });
-
-      document.addEventListener("click", function (event) {
-        if (!menuIcon.contains(event.target) && !dropdown.contains(event.target)) {
-          dropdown.style.display = "none";
-        }
-      });
-    });
-  </script>
 </head>
 
 <body>
-  <div class="top-header">
-    <div class="logo">Ar. SUNEELKUMAR KODURU</div>
-    <div class="nav-links">
-      <a href="index.html">Portfolio</a>
-      <a href="walkthroughs.html">Walkthroughs</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="menu-icon" id="menu-icon">&#9776;</div>
-    <div class="dropdown-menu" id="dropdown-menu">
-      <a href="index.html">Portfolio</a>
-      <a href="walkthroughs.html">Walkthroughs</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
+  <header>
+    <h1>Ar. SUNEELKUMAR KODURU</h1>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="walkthroughs.html">Walkthroughs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <div class="project-title">Walkthrough Videos</div>
 
   <section class="gallery">
-    <!-- Video cards -->
     <div class="video-container">
       <div class="iframe-wrapper">
         <iframe src="https://drive.google.com/file/d/1_4RjSM2NPedGp0wH5zuMp6Aht2fRvkgA/preview"
           allow="autoplay; fullscreen"
-          sandbox="allow-scripts allow-same-origin allow-presentation">
-        </iframe>
+          sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
       </div>
       <div class="video-title">Gadwal RailwayStation Walkthrough</div>
     </div>
@@ -232,8 +187,7 @@
       <div class="iframe-wrapper">
         <iframe src="https://drive.google.com/file/d/1UJPus4kdmQ5rozOTAsCqtYs5Df-Lx9F3/preview"
           allow="autoplay; fullscreen"
-          sandbox="allow-scripts allow-same-origin allow-presentation">
-        </iframe>
+          sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
       </div>
       <div class="video-title">Harekrishna Temple Walkthrough</div>
     </div>
@@ -242,8 +196,7 @@
       <div class="iframe-wrapper">
         <iframe src="https://drive.google.com/file/d/1ZgPNjadvtl2a3CR9_M4NyU1PMvHMHoWh/preview"
           allow="autoplay; fullscreen"
-          sandbox="allow-scripts allow-same-origin allow-presentation">
-        </iframe>
+          sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
       </div>
       <div class="video-title">Narsipatnam Layout Walkthrough</div>
     </div>
@@ -252,8 +205,7 @@
       <div class="iframe-wrapper">
         <iframe src="https://drive.google.com/file/d/1tfv7AQEaJ4h-y44HL7MF-MHTSvK0PH0j/preview"
           allow="autoplay; fullscreen"
-          sandbox="allow-scripts allow-same-origin allow-presentation">
-        </iframe>
+          sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
       </div>
       <div class="video-title">Reception Walkthrough</div>
     </div>
@@ -262,8 +214,7 @@
       <div class="iframe-wrapper">
         <iframe src="https://drive.google.com/file/d/1W3UMNaWRd0LCjLHGrVatXMw6dO43eHwb/preview"
           allow="autoplay; fullscreen"
-          sandbox="allow-scripts allow-same-origin allow-presentation">
-        </iframe>
+          sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>
       </div>
       <div class="video-title">House Elevation</div>
     </div>
@@ -272,5 +223,11 @@
   <footer>
     <p>&copy; 2025 Ar. SUNEELKUMAR KODURU. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
