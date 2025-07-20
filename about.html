@@ -14,12 +14,13 @@
       color: #333;
     }
 
-    .top-header {
+    header {
       background: #60485a;
       padding: 24px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
 
     .logo {
@@ -29,20 +30,56 @@
       text-shadow: 1px 1px 1px #222;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 25px;
+    .menu-icon {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: white;
     }
 
-    .nav-links a {
+    nav {
+      position: relative;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
       text-decoration: none;
       color: white;
       font-weight: 500;
       transition: color 0.3s;
     }
 
-    .nav-links a:hover {
+    nav ul li a:hover {
       color: #c62828;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #402c3d;
+        position: absolute;
+        top: 65px;
+        right: 40px;
+        padding: 15px;
+        border-radius: 10px;
+        z-index: 999;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
     }
 
     .about-section {
@@ -101,15 +138,18 @@
 </head>
 
 <body>
-  <div class="top-header">
+  <header>
     <div class="logo">Ar. SUNEELKUMAR KODURU</div>
-    <nav class="nav-links">
-      <a href="index.html">Portfolio</a>
-      <a href="walkthroughs.html">Walkthroughs</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="walkthroughs.html">Walkthroughs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-  </div>
+  </header>
 
   <section class="about-section">
     <div class="about-container">
@@ -128,6 +168,12 @@
   <footer>
     <p>&copy; 2025 Ar. SUNEELKUMAR KODURU. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('show');
+    }
+  </script>
 </body>
 
 </html>
