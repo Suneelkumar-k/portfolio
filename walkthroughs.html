@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,6 +18,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
 
     .logo {
@@ -42,6 +42,49 @@
 
     .nav-links a:hover {
       color: #c62828;
+    }
+
+    /* Menu icon styles */
+    .menu-icon {
+      display: none;
+      cursor: pointer;
+      font-size: 26px;
+      color: white;
+      position: absolute;
+      right: 20px;
+      top: 28px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: #60485a;
+      padding: 10px 20px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 0;
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown-menu a:hover {
+      color: #c62828;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+      }
     }
 
     .project-title {
@@ -113,16 +156,6 @@
       .gallery {
         grid-template-columns: 1fr;
       }
-
-      .top-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-      }
     }
   </style>
 
@@ -146,6 +179,19 @@
           iframe.contentWindow.addEventListener("click", () => stopAllOtherVideos(iframe));
         });
       });
+
+      const menuIcon = document.getElementById("menu-icon");
+      const dropdown = document.getElementById("dropdown-menu");
+
+      menuIcon.addEventListener("click", () => {
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!menuIcon.contains(event.target) && !dropdown.contains(event.target)) {
+          dropdown.style.display = "none";
+        }
+      });
     });
   </script>
 </head>
@@ -153,21 +199,28 @@
 <body>
   <div class="top-header">
     <div class="logo">Ar. SUNEELKUMAR KODURU</div>
-    <nav class="nav-links">
+    <div class="nav-links">
       <a href="index.html">Portfolio</a>
       <a href="walkthroughs.html">Walkthroughs</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-    </nav>
+    </div>
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+    <div class="dropdown-menu" id="dropdown-menu">
+      <a href="index.html">Portfolio</a>
+      <a href="walkthroughs.html">Walkthroughs</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </div>
 
   <div class="project-title">Walkthrough Videos</div>
 
   <section class="gallery">
+    <!-- Video cards -->
     <div class="video-container">
       <div class="iframe-wrapper">
-        <iframe
-          src="https://drive.google.com/file/d/1_4RjSM2NPedGp0wH5zuMp6Aht2fRvkgA/preview"
+        <iframe src="https://drive.google.com/file/d/1_4RjSM2NPedGp0wH5zuMp6Aht2fRvkgA/preview"
           allow="autoplay; fullscreen"
           sandbox="allow-scripts allow-same-origin allow-presentation">
         </iframe>
@@ -177,8 +230,7 @@
 
     <div class="video-container">
       <div class="iframe-wrapper">
-        <iframe
-          src="https://drive.google.com/file/d/1UJPus4kdmQ5rozOTAsCqtYs5Df-Lx9F3/preview"
+        <iframe src="https://drive.google.com/file/d/1UJPus4kdmQ5rozOTAsCqtYs5Df-Lx9F3/preview"
           allow="autoplay; fullscreen"
           sandbox="allow-scripts allow-same-origin allow-presentation">
         </iframe>
@@ -188,8 +240,7 @@
 
     <div class="video-container">
       <div class="iframe-wrapper">
-        <iframe
-          src="https://drive.google.com/file/d/1ZgPNjadvtl2a3CR9_M4NyU1PMvHMHoWh/preview"
+        <iframe src="https://drive.google.com/file/d/1ZgPNjadvtl2a3CR9_M4NyU1PMvHMHoWh/preview"
           allow="autoplay; fullscreen"
           sandbox="allow-scripts allow-same-origin allow-presentation">
         </iframe>
@@ -199,8 +250,7 @@
 
     <div class="video-container">
       <div class="iframe-wrapper">
-        <iframe
-          src="https://drive.google.com/file/d/1tfv7AQEaJ4h-y44HL7MF-MHTSvK0PH0j/preview"
+        <iframe src="https://drive.google.com/file/d/1tfv7AQEaJ4h-y44HL7MF-MHTSvK0PH0j/preview"
           allow="autoplay; fullscreen"
           sandbox="allow-scripts allow-same-origin allow-presentation">
         </iframe>
@@ -210,8 +260,7 @@
 
     <div class="video-container">
       <div class="iframe-wrapper">
-        <iframe
-          src="https://drive.google.com/file/d/1W3UMNaWRd0LCjLHGrVatXMw6dO43eHwb/preview"
+        <iframe src="https://drive.google.com/file/d/1W3UMNaWRd0LCjLHGrVatXMw6dO43eHwb/preview"
           allow="autoplay; fullscreen"
           sandbox="allow-scripts allow-same-origin allow-presentation">
         </iframe>
@@ -224,5 +273,4 @@
     <p>&copy; 2025 Ar. SUNEELKUMAR KODURU. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
 </body>
-
 </html>
