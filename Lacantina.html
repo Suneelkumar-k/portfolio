@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Cantina</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -51,6 +52,9 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     nav ul li a:hover {
@@ -156,13 +160,15 @@
 
   <header>
     <h1>Ar. SUNEELKUMAR KODURU</h1>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
     <nav>
       <ul id="menu">
-        <li><a href="index.html">Portfolio</a></li>
-        <li><a href="walkthroughs.html">Walkthroughs</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i>Portfolio</a></li>
+        <li><a href="walkthroughs.html"><i class="fas fa-video"></i>Walkthroughs</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i>About</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -170,7 +176,7 @@
   <div class="project-title">La Cantina Project</div>
 
   <section class="gallery">
-    <img src="LA CANTINA VIEWS._page-0002.jpg" alt="Temple Image 1" />
+    <img src="LA CANTINA VIEWS._page-0002.jpg" alt="Image 1" />
     <img src="LA CANTINA VIEWS._page-0003.jpg" alt="Image 2" />
     <img src="LA CANTINA VIEWS._page-0004.jpg" alt="Image 3" />
     <img src="LA CANTINA VIEWS._page-0005.jpg" alt="Image 4" />
