@@ -20,6 +20,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
 
     .logo {
@@ -27,6 +28,20 @@
       font-size: 2.2em;
       color: white;
       text-shadow: 1px 1px 1px #222;
+    }
+
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-icon span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      border-radius: 2px;
     }
 
     .nav-links {
@@ -43,6 +58,37 @@
 
     .nav-links a:hover {
       color: #c62828;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: flex;
+        position: absolute;
+        right: 40px;
+        top: 30px;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #ffffff;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        border-bottom-left-radius: 10px;
+      }
+
+      .nav-links a {
+        color: #60485a;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
     }
 
     .section {
@@ -74,7 +120,12 @@
 <body>
   <div class="top-header">
     <div class="logo">Ar. SUNEELKUMAR KODURU</div>
-    <nav class="nav-links">
+    <div class="menu-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Portfolio</a>
       <a href="walkthroughs.html">Walkthroughs</a>
       <a href="about.html">About</a>
@@ -94,6 +145,13 @@
   <footer>
     <p>&copy; 2025 Ar. SUNEELKUMAR KODURU. Website developed by <strong>Haritha Koduru</strong>.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("show");
+    }
+  </script>
 </body>
 
 </html>
