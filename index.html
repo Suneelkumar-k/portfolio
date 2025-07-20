@@ -23,9 +23,25 @@
       flex-wrap: wrap;
     }
 
+    header .left-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     header h1 {
       margin: 0;
       font-size: 24px;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      padding: 6px 12px;
+      background-color: #ffccbc; /* Different from header */
+      border-radius: 6px;
+      color: #333;
     }
 
     nav ul {
@@ -44,19 +60,6 @@
 
     nav ul li a:hover {
       color: #c62828;
-    }
-
-    .menu-container {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-    }
-
-    .menu-icon {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      margin-left: 20px;
     }
 
     @media (max-width: 768px) {
@@ -139,18 +142,18 @@
 <body>
 
   <header>
-    <h1>Ar. SUNEELKUMAR KODURU</h1>
-    <div class="menu-container">
+    <div class="left-section">
+      <h1>Ar. SUNEELKUMAR KODURU</h1>
       <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-      <nav>
-        <ul id="menu">
-          <li><a href="index.html">Portfolio</a></li>
-          <li><a href="walkthroughs.html">Walkthroughs</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
     </div>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="walkthroughs.html">Walkthroughs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
